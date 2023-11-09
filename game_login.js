@@ -5,3 +5,4 @@ function addUser(){
     localStorage.setItem("p2name", player2name)
     window.location ="game_page.html";
 }
+

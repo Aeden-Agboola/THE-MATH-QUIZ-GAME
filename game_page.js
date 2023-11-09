@@ -13,24 +13,16 @@ document.getElementById("player1_score").innerHTML = player1score;
 document.getElementById("player2_score").innerHTML = player2score;
 
 function send() {
-    q_word = document.getElementById("word").value;
-    q_word = q_word.toLowerCase();
-    second_letter = q_word.charAt(1);
-    word_length = q_word.length;
-    last_letter = q_word.charAt(word_length - 1);
-    middle_letter = q_word.charAt(Math.floor(word_length / 2));
-    console.log(second_letter, middle_letter, last_letter);
-    replace_word = q_word.replace(second_letter, "_")
-    console.log(replace_word);
-    replace_word = replace_word.replace(middle_letter, "_");
-    console.log(replace_word);
-    replace_word = replace_word.replace(last_letter, "_")
-    console.log(replace_word);
-    h4_tag = '<h4 id="q"> Q:' + replace_word + '</h4>';
-    input_tag = '<br> Ans:<input id="ans_word">';
-    button_tag = '<br> <br> <button class="btn btn-success" onclick="check_answer()"> check </button>';
-    document.getElementById("output").innerHTML = h4_tag + input_tag + button_tag;
-    document.getElementById("word").value = "";
+    number1 = document.getElementById("number1").value
+    number2 = document.getElementById("number2").value
+    actual_answer = parseInt(number1) * parseInt(number2)
+    question_number = "<h4>" + number1 + "X" + number2 + "</h4>";
+    input_box = "<br>Answer : <input type='text'id='input_check_box'>";
+    check_button = "<br><br><button class='btn btn-info' onclick='check()'>checl</button>";
+    row = question_number + input_box + check_button ;
+    document.getElementById("number1").value = "";
+    document.getElementById("nummber2").value = "";
+
 }
 
 function check_answer() {
